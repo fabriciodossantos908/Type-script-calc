@@ -9,6 +9,8 @@ import './styles.css'
 // Create a interface do declare props for tsx func
 interface PageHeaderProps {
     title: string;
+    // tellig a optional propertie
+    description?: string
 }
 
 // React.FC -> functional component, on the <> had to be your interface obj  
@@ -25,6 +27,7 @@ const PageHeader: React.FC<PageHeaderProps> = (props) => {
                 <strong>
                     {props.title}
                 </strong>
+                {props.description && <p>{props.description}</p>}
                 {props.children}
 
             </div>
